@@ -1,7 +1,9 @@
-package entities;
+package entities2;
+
+import entities.PostalAddress;
 
 public class Person {
-    String name;
+    public String name;
     String lastName;
     PostalAddress address;
 
