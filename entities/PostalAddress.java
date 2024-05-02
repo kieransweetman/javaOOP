@@ -13,6 +13,38 @@ public class PostalAddress {
         this.city = city;
     }
 
+    public String getCity() {
+        return city;
+    }
+
+    public int getHouseNum() {
+        return houseNum;
+    }
+
+    public int getPostalCode() {
+        return postalCode;
+    }
+
+    public String getRoadName() {
+        return roadName;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setHouseNum(int houseNum) {
+        this.houseNum = houseNum;
+    }
+
+    public void setPostalCode(int postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public void setRoadName(String roadName) {
+        this.roadName = roadName;
+    }
+
     @Override
     public String toString() {
         return "PostalAddress{" +
