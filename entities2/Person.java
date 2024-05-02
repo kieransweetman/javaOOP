@@ -3,6 +3,7 @@ package entities2;
 import entities.PostalAddress;
 
 public class Person {
+    // since we acces this in another package, it must be public
     public String name;
     String lastName;
     PostalAddress address;
