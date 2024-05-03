@@ -10,4 +10,8 @@ public class Debit extends Operation {
         return "DEBIT";
     }
 
+    public void calculateBalance() {
+        this.amount -= amount;
+    }
+
 }

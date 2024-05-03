@@ -19,16 +19,8 @@ public class OperationTest {
 
         float balance = 0;
         for (Operation operation : operations) {
-            String type = operation.getType();
             System.out.println(operation);
-
-            double amount = operation.getAmount();
-
-            if (type.equals(CREDIT)) {
-                balance += amount;
-            } else {
-                balance -= amount;
-            }
+            operation.calculateBalance();
         }
 
         System.out.println("\nYour final balance is: " + balance);
