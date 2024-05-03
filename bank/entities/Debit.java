@@ -10,7 +10,4 @@ public class Debit extends Operation {
         return "DEBIT";
     }
 
-    public double getAmount() {
-        return this.amount;
-    }
 }
