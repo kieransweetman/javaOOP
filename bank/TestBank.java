@@ -1,4 +1,7 @@
-package bank.entities;
+package bank;
+
+import bank.entities.Account;
+import bank.entities.Interest;
 
 public class TestBank {
     public static void main(String[] args) {
