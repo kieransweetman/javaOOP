@@ -2,7 +2,7 @@ package bank.entities;
 
 public class Interest extends Account {
 
-    double rate;
+    private double rate;
 
     public Interest(int accountNumber, float balance, double rate) {
         super(accountNumber, balance);
@@ -10,10 +10,14 @@ public class Interest extends Account {
 
     }
 
+    public double getRate() {
+        return this.rate;
+    }
+
     @Override
     public String toString() {
         return super.toString() + "\n Interest \n" +
-                " rate:" + this.rate +
+                " rate:" + this.getRate() +
                 ",\n";
     }
 

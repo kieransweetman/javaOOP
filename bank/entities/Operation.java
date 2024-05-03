@@ -2,8 +2,8 @@ package bank.entities;
 
 public abstract class Operation {
 
-    public String date;
-    public double amount;
+    protected String date;
+    protected double amount;
 
     public Operation(String date, double amount) {
         this.date = date;
@@ -11,4 +11,11 @@ public abstract class Operation {
     }
 
     public abstract String getType();
+
+    public abstract double getAmount();
+
+    @Override
+    public String toString() {
+        return "date: " + date + ",\namount: " + amount;
+    }
 }

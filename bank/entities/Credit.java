@@ -10,4 +10,8 @@ public class Credit extends Operation {
         return "CREDIT";
     }
 
+    public double getAmount() {
+        return this.amount;
+    }
+
 }

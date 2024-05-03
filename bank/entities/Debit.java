@@ -9,4 +9,8 @@ public class Debit extends Operation {
     public String getType() {
         return "DEBIT";
     }
+
+    public double getAmount() {
+        return this.amount;
+    }
 }

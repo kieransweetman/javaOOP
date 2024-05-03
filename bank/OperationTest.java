@@ -20,18 +20,18 @@ public class OperationTest {
         float balance = 0;
         for (Operation operation : operations) {
             String type = operation.getType();
-            System.out.println("Operation type: " + type);
-            System.out.println(operation.date);
-            System.out.println(operation.amount);
 
+            System.out.println("\nOperation type: " + type);
+            System.out.println(operation.toString());
+
+            double amount = operation.getAmount();
             if (type == CREDIT) {
-                balance += operation.amount;
-            } else if (type == DEBIT) {
-                // note: can just do else but for readiblity we will add else if instead
-                balance -= operation.amount;
+                balance += amount;
+            } else {
+                balance -= amount;
             }
         }
 
-        System.out.println("Your final balance is: " + balance);
+        System.out.println("\nYour final balance is: " + balance);
     }
 }

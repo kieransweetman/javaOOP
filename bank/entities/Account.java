@@ -1,8 +1,8 @@
 package bank.entities;
 
 public class Account {
-    int accountNumber;
-    float balance;
+    protected int accountNumber;
+    protected float balance;
 
     public Account(int accountNumber, float balance) {
         this.accountNumber = accountNumber;
