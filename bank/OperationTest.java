@@ -22,7 +22,7 @@ public class OperationTest {
             String type = operation.getType();
 
             System.out.println("\nOperation type: " + type);
-            System.out.println(operation.toString());
+            System.out.println(operation);
 
             double amount = operation.getAmount();
             if (type == CREDIT) {

@@ -11,7 +11,7 @@ public class TestBank {
         Account[] accounts = { acc, intAcc };
 
         for (Account account : accounts) {
-            System.out.println(account.toString());
+            System.out.println(account);
         }
 
     }
