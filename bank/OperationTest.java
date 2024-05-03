@@ -23,7 +23,8 @@ public class OperationTest {
             System.out.println(operation);
 
             double amount = operation.getAmount();
-            if (type == CREDIT) {
+
+            if (type.equals(CREDIT)) {
                 balance += amount;
             } else {
                 balance -= amount;
