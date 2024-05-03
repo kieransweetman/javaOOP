@@ -30,6 +30,6 @@ public abstract class Operation {
 
     @Override
     public String toString() {
-        return "date: " + date + ",\namount: " + amount;
+        return "\nType: " + this.getType() + "\ndate: " + date + ",\namount: " + amount;
     }
 }

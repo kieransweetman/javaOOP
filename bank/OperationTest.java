@@ -20,8 +20,6 @@ public class OperationTest {
         float balance = 0;
         for (Operation operation : operations) {
             String type = operation.getType();
-
-            System.out.println("\nOperation type: " + type);
             System.out.println(operation);
 
             double amount = operation.getAmount();
