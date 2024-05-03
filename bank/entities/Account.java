@@ -27,10 +27,10 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
-                "accountNumber=" + this.getAccountNumber() +
-                ", balance=" + this.getBalance() +
-                '}';
+        return "Account \n" +
+                " accountNumber:" + this.getAccountNumber() +
+                ",\n balance:" + this.getBalance() +
+                ",\n";
     }
 
 }
