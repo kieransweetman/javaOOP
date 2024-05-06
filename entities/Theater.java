@@ -18,7 +18,7 @@ public class Theater {
     }
 
     public void signUp(int numOfClients, double price) {
-        if (this.totalClients == maxOccupants || reachedMaxOcc(numOfClients))
+        if (this.reachedMaxOcc(numOfClients))
             throw new Error(
                     "\nReached max occupancy: " + this.totalClients + ".\nTried to add " + numOfClients
                             + " client(s). \nMax is " + this.maxOccupants);
@@ -40,12 +40,11 @@ public class Theater {
     }
 
     private boolean reachedMaxOcc(int clientsToAdd) {
-        return clientsToAdd + this.totalClients >= this.maxOccupants;
+        return this.totalClients == maxOccupants || clientsToAdd + this.totalClients >= this.maxOccupants;
     }
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
         return "\nadded clients. New number of clients is now: " + this.totalClients + "\nnew revenu total: "
                 + this.getTotalRevenu();
 

@@ -9,7 +9,7 @@ public class Circle implements GeometricObj {
     }
 
     public double area() {
-        return Math.PI * (Math.pow(radius, 2));
+        return Math.PI * (Math.pow(this.radius, 2));
     }
 
     /*
