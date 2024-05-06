@@ -19,6 +19,10 @@ public class Game {
             System.out.println(
                     "\n-----\n0: create character \n1: Battle a creature\n2: show your score\n3: Show hp\n4: exit\n----\n");
             switch (scanner.nextInt()) {
+                /*
+                 * Create a new character
+                 * 
+                 */
                 case 0:
                     if (player != null) {
                         System.out.println("You've already created a character");
@@ -31,8 +35,11 @@ public class Game {
                     System.out.println(player.toString());
 
                     break;
+                /*
+                 * Play vs a creature
+                 * 
+                 */
                 case 1:
-
                     if (!Game.hasCreatedCharacter()) {
                         System.out.println("\n---please create a character first.---\n");
                         continue;
@@ -54,6 +61,11 @@ public class Game {
                     System.out.println("You won! The score right now is: " + player.getScore());
 
                     continue;
+
+                /*
+                 * Show current score
+                 * 
+                 */
                 case 2:
                     if (!Game.hasCreatedCharacter()) {
                         System.out.println(0);
@@ -62,6 +74,11 @@ public class Game {
                     System.out.println("Current score: \n");
                     System.out.println(player.getScore());
                     continue;
+
+                /*
+                 * Get Current Hp
+                 * 
+                 */
                 case 3:
                     if (!Game.hasCreatedCharacter()) {
                         System.out.println("you need to create a character first to show your hp");
@@ -70,13 +87,13 @@ public class Game {
 
                     System.out.println("Current hp: " + player.getHp());
                     continue;
+                /*
+                 * Quit game
+                 * 
+                 */
                 case 4:
                     isPlaying = false;
-                    // quit game
                     continue;
-
-                default:
-                    break;
             }
 
         }
