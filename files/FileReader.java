@@ -18,6 +18,7 @@ public class FileReader {
 
             // header
             /*
+             * NOTE: Items with a start are the fields we need to populate our `City` class
              * Code région;*
              * Nom de la région;
              * Code département;*
