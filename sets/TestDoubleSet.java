@@ -3,9 +3,10 @@ package sets;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
+import java.util.Set;
 
 public class TestDoubleSet {
-    static HashSet<Double> doubleNums = new HashSet<Double>(Arrays.asList(1.5, 8.25,
+    static HashSet<Double> doubleNums = new HashSet<Double>(Set.of(1.5, 8.25,
             -7.32, 13.3,
             -12.45, 48.5, 0.01));
 
