@@ -3,6 +3,7 @@ package files;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.util.List;
 
 public class CreateFile {
@@ -16,7 +17,7 @@ public class CreateFile {
             List<String> first100 = lines.subList(1, 100);
 
             String outputPath = "/Users/kieransweetman/code/javaOOP/output.csv"; // replace with your output path
-            Files.write(Paths.get(outputPath), first100);
+            Files.write(Paths.get(outputPath), first100, StandardOpenOption.CREATE, StandardOpenOption.APPEND);
 
         } catch (IOException e) {
             e.printStackTrace();
