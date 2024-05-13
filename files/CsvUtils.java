@@ -24,18 +24,14 @@ public class CsvUtils {
         // Records
 
         Map<Integer, String> valueMap = new TreeMap<>();
-        for (City c : cities) {
+        for (City city : cities) {
             for (Field f : fields) {
                 CSVField csvField = f.getAnnotation(CSVField.class);
 
-                f.setAccessible(true);
-                if (f.isAnnotationPresent(CSVField.class)) {
-
-                    try {
-                        valueMap.put(csvField.column(), f.get(c).toString());
-                    } catch (IllegalAccessException e) {
-                        e.printStackTrace();
-                    }
+                try {
+                    valueMap.put(csvField.column(), f.get(city).toString());
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
                 }
             }
             // add record, go to new line;
