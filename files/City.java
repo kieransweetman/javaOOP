@@ -2,9 +2,15 @@ package files;
 
 public class City {
 
+    @CSVField(name = "name", column = 0)
     String name;
+    @CSVField(name = "department", column = 1)
     String department;
+
+    @CSVField(name = "region", column = 2)
     String region;
+
+    @CSVField(name = "population", column = 3)
     int population;
 
     public City(String name, String department, String region, int population) {

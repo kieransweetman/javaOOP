@@ -1,6 +1,7 @@
 package files;
 
 import java.io.IOException;
+import java.lang.reflect.Field;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -59,12 +60,19 @@ public class FileReader {
                             + city.getPopulation())
                     .collect(Collectors.toList());
 
+            System.out.println("\n");
             System.out.println("comparable implementation");
             System.out.println(cities.subList(0, 2));
             cities.sort(new NameComparator());
             System.out.println(cities.subList(0, 2));
             System.out.println("-----");
 
+            System.out.println("\n");
+            System.out.println("Annonations");
+            System.out.println("-----");
+            CsvUtils.toCSV(cities.subList(0, 20));
+
+            System.out.println("\n");
             System.out.println("comparable implementation POP");
             System.out.println(cities.subList(cities.size() - 2, cities.size()));
             cities.sort(new PopulationComparator());
@@ -73,6 +81,11 @@ public class FileReader {
 
             String outputPath = "/Users/kieransweetman/code/javaOOP/Cities.csv"; // replace with your output path
             Files.write(Paths.get(outputPath), csvLines);
+
+            System.out.println("\n");
+            System.out.println("Annonations");
+            System.out.println("-----");
+            CsvUtils.toCSV(cities.subList(0, 20));
 
         } catch (IOException e) {
             e.printStackTrace();
