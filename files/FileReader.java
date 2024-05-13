@@ -14,7 +14,38 @@ import java.util.stream.Collectors;
 public class FileReader {
     static String csvPath = "/Users/kieransweetman/code/javaOOP/recensement.csv";
 
+    public static List<City> cities() {
+        List<City> cities = new ArrayList<City>();
+
+        try {
+            List<String> lines = Files.readAllLines(Paths.get(csvPath));
+            String head = lines.get(0);
+            // removing head since we don't need it
+            lines.remove(0);
+
+            for (String line : lines) {
+                String[] tokens = line.split(";");
+                if (tokens.length == 0)
+                    continue;
+
+                String region = tokens[0];
+                String name = tokens[6];
+                String department = tokens[2];
+                int population = Integer.parseInt(tokens[9].replaceAll(" ", ""));
+
+                cities.add(new City(name, department, region, population));
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return cities;
+    }
+
     public static void main(String[] args) {
+        List<City> cities = new ArrayList<City>();
+
         try {
             List<String> lines = Files.readAllLines(Paths.get(csvPath));
 
@@ -36,8 +67,6 @@ public class FileReader {
             String head = lines.get(0);
             // removing head since we don't need it
             lines.remove(0);
-
-            List<City> cities = new ArrayList<City>();
 
             for (String line : lines) {
                 String[] tokens = line.split(";");
@@ -92,4 +121,5 @@ public class FileReader {
         }
 
     }
+
 }

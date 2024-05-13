@@ -7,7 +7,7 @@ import java.util.TreeMap;
 
 public class CsvUtils {
 
-    public static StringBuilder toCSV(List<City> cities) {
+    public static String toCSV(List<City> cities) {
         Field[] fields = cities.get(0).getClass().getDeclaredFields();
         StringBuilder csv = new StringBuilder();
 
@@ -19,7 +19,7 @@ public class CsvUtils {
             headerMap.put(csvField.column(), csvField.name());
 
         }
-        csv.append(String.join(";", headerMap.values())).append("\n");
+        csv.append(String.join(";", headerMap.values())).append(";\n");
 
         // Records
 
@@ -39,12 +39,11 @@ public class CsvUtils {
                 }
             }
             // add record, go to new line;
-            csv.append(String.join(";", valueMap.values())).append("\n");
+            csv.append(String.join(";", valueMap.values())).append(";\n");
 
         }
 
-        System.out.println(csv);
-        return csv;
+        return csv.toString();
 
     }
 }
