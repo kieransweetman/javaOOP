@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -57,6 +58,18 @@ public class FileReader {
                     .map(city -> city.getName() + ";" + city.getDepartment() + ";" + city.getRegion() + ";"
                             + city.getPopulation())
                     .collect(Collectors.toList());
+
+            System.out.println("comparable implementation");
+            System.out.println(cities.subList(0, 2));
+            cities.sort(new NameComparator());
+            System.out.println(cities.subList(0, 2));
+            System.out.println("-----");
+
+            System.out.println("comparable implementation POP");
+            System.out.println(cities.subList(cities.size() - 2, cities.size()));
+            cities.sort(new PopulationComparator());
+            System.out.println(cities.subList(cities.size() - 2, cities.size()));
+            System.out.println("-----");
 
             String outputPath = "/Users/kieransweetman/code/javaOOP/Cities.csv"; // replace with your output path
             Files.write(Paths.get(outputPath), csvLines);
